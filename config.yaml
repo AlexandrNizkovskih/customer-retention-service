@@ -1,0 +1,6 @@
+title: "Customer Retention Prediction"
+model_path: "model/model.pkl"
+target_col: "Churn"
+drop_cols: ["customerID"]
+threshold: 0.55
+top_k: 1000
