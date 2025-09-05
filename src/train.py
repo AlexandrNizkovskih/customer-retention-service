@@ -21,7 +21,7 @@ def main():
     # целевая: Yes/No -> 1/0
     df[args.target] = (df[args.target].astype(str).str.strip().str.upper() == "YES").astype(int)
 
-    # простая очистка: выбросим customerID, пустые TotalCharges -> NaN -> заполним медианой позже scaler'ом
+    # простая очистка: ID, пустые значения -> NaN -> медиана позже scaler'ом
     drop_cols = [c for c in ["customerID"] if c in df.columns]
     y = df[args.target].astype(int)
     X = df.drop(columns=drop_cols + [args.target])
